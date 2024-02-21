@@ -1,0 +1,15 @@
+{% macro isActive(page,text) %} 
+
+{% if page == request.endpoint %}
+<li class="list">
+  <a href="{{url_for(page)}}" class="list-a active">{{text}}</a>
+</li>
+
+{% else%}
+<li class="list">
+  <a href="{{url_for(page)}}" class="list-a">{{text}}</a>
+</li>
+
+
+{%endif%}
+{% endmacro %}
