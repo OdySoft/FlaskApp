@@ -1,102 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--fav icon-->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/ubisoft.png')}}" type="image/x-icon" />
-    <title>Flask</title>
-    <!--link css-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
-  </head>
-  <body>
-    <!--Code Here  . . . -->
-    <header>
-      <div class="header-container">
-        <div class="left">
-          <!--logo and title-->
-          <div class="left-block">
-            <div class="img">
-              <img src="{{ url_for('static', filename='img/ubisoft.png')}}" alt="ubisoft" />
-            </div>
-            <h2 class="ubisoft-h2">ubisoft</h2>
-          </div>
+{% extends "base.html"%}
 
-          <!--navigation block-->
+{% block content %}
+<section class="shop flex">
+  {% for product in products %}
+  <a href="{{ url_for('product', product_id = loop.index -1) }}" class="row1">
+    <div class="row2 flex">
+      <div class="img-box">
+        <img src="{{product['img']}}" alt="motherboard" />
+      </div>
+      <p class="title">{{product['title']}}</p>
 
-          <nav class="navigation">
-            <ul class="flex">
-              <!--1-->
-              <li class="list">
-                <a href="#" class="list-a">Play</a>
-              </li>
-              <!--2-->
-              <li class="list">
-                <a href="#" class="list-a">Shop</a>
-              </li>
-              <!--3-->
-              <li class="list">
-                <a href="#" class="list-a">Explore</a>
-              </li>
-              <!--4-->
-              <li class="list">
-                <a href="#" class="list-a">Help</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!--right block-->
-
-        <div class="right flex">
-          <a href="#" role="button" class="login">Login</a>
-          <a href="#" role="button" class="reg">Registration</a>
-        </div>
-      </div>
-    </header>
-    <section class="shop flex">
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-      <div class="row flex">
-          <div class="img-box">
-              <img src="https://pcroom.ge/image/cache/catalog/2-7480-55-244x244.png" alt="motherboard">
-          </div>
-          <p class="title">დედაბარათი - Asus Prime H510M-K</p>
-          <h3 class="h3">Price: </h3>
-      </div>
-  </section>
-  </body>
-</html>
+      <h3 class="h3">{{product['price']}}</h3>
+    </div>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}

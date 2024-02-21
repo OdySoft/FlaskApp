@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+
+{% block content %}
+<section class="shop flex">
+  <div class="row2 flex">
+    <div class="img-box">
+      <img src="{{product['img']}}" alt="motherboard" />
+    </div>
+    <p class="title">{{product['title']}}</p>
+
+    <h3 class="h3">{{product['price']}}</h3>
+  </div>
+</section>
+{% endblock %}
