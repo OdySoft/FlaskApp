@@ -37,7 +37,7 @@ html , body{
 }
 .list-a{
     font-size: 16px;
-    color: white;
+    color: rgb(160, 160, 160);
     text-transform: uppercase;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -73,7 +73,8 @@ html , body{
     width: 100%;
 }
 
-.row{
+
+.row2{
     width: 225px;
     height: 300px;
     background-color: rgb(255, 255, 255);
